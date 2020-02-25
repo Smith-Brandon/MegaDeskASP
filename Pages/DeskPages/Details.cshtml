@@ -1,0 +1,55 @@
+﻿@page
+@model MegaDeskWebASP.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DeskModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Width)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Width)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Depth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Depth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Drawers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Drawers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Material)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Material)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeskModel.Rush)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskModel.Rush)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DeskModel.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
