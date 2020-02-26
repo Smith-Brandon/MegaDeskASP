@@ -34,14 +34,11 @@ namespace MegaDeskWebASP
                 return Page();
             }
 
-     
-
             getArea();
             getDrawerCost();
             getMaterialCost();
             getRushCost();
             getTotalCost();
-
 
             Desk.Date = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -52,7 +49,7 @@ namespace MegaDeskWebASP
         }
         private void getTotalCost()
         {
-            Desk.TotalCost = Desk.MaterialCost + Desk.BasePrice + Desk.DrawerCost + Desk.RushCost;
+            Desk.TotalCost = Desk.MaterialCost + Desk.BasePrice + Desk.DrawerCost + Desk.RushCost + Desk.Area;
         }
         private void getArea()
         {
