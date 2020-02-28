@@ -5,11 +5,28 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Quote list</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Customer Name: <select asp-for="CustName" asp-items="Model.Names">
+            <option value="">All</option>
+        </select>
+        
+
+        Sort: <select asp-for="SortOrder">
+            <option value="Newest">Newest</option>
+            <option value="Oldest">Oldest</option>
+            <option value="Name Descending">Name Descending</option>
+            <option value="Name Ascending">Name Ascending</option>
+        </select>
+
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
