@@ -44,21 +44,19 @@
                 <input asp-for="Desk.Rush" class="form-control" />
                 <span asp-validation-for="Desk.Rush" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Desk.Date" class="control-label"></label>
-                <input asp-for="Desk.Date" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")"  />
+                <input asp-for="Desk.Date" class="form-control" />
                 <span asp-validation-for="Desk.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Desk.TotalCost" class="control-label"></label>
-                <input asp-for="Desk.TotalCost" class="form-control" readonly />
+                <input asp-for="Desk.TotalCost" class="form-control" />
                 <span asp-validation-for="Desk.TotalCost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-
         </form>
     </div>
 </div>
