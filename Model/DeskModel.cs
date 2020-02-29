@@ -36,6 +36,8 @@ namespace MegaDeskWebASP.Model
         public double Rush { get; set; }
         public double RushCost { get; set; }
         public double BasePrice = 200;
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public string Date { get; set; }
         public double TotalCost { get; set; }
 
