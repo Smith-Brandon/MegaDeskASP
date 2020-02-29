@@ -111,6 +111,9 @@ namespace MegaDeskWebASP
                     if (Desk.Area > 2000)
                     { Desk.RushCost = 40; }
                     break;
+                case 14:
+                    Desk.RushCost = 0;
+                    break;
             }
         }
     }
