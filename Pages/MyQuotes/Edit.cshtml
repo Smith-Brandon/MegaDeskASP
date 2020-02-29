@@ -1,0 +1,86 @@
+﻿@page "{id:int?}"
+@model MegaDeskWebASP.EditModel
+
+@{
+    ViewData["Title"] = "Edit Quote";
+}
+
+    <section>
+        <div class="m-3">
+            <h1>@ViewData["Title"]</h1>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Desk.ID" />
+                        <div class="form-group">
+                            <label asp-for="Desk.Name" class="control-label"></label>
+                            <input asp-for="Desk.Name" class="form-control" />
+                            <span asp-validation-for="Desk.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.Width" class="control-label"></label>
+                            <input asp-for="Desk.Width" class="form-control" />
+                            <span asp-validation-for="Desk.Width" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.Depth" class="control-label"></label>
+                            <input asp-for="Desk.Depth" class="form-control" />
+                            <span asp-validation-for="Desk.Depth" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.Drawers" class="control-label"></label>
+                            <input asp-for="Desk.Drawers" class="form-control" />
+                            <span asp-validation-for="Desk.Drawers" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label asp-for="Desk.Material" class="control-label"></label>
+                                    <select asp-for="Desk.Material" class="form-control">
+                                        <option value="Oak">Oak</option>
+                                        <option value="Laminate">Laminate</option>
+                                        <option value="Veneer">Veneer</option>
+                                        <option value="Pine">Pine</option>
+                                        <option value="Rosewood">Rosewood</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <span id="oak"><img src="~/images/oak.jpg" alt="Oak" /></span>
+                                    <span id="laminate"><img src="~/images/laminate.jpg" alt="Laminate" /></span>
+                                    <span id="veneer"><img src="~/images/veneer.jpg" alt="Veneer" /></span>
+                                    <span id="pine"><img src="~/images/pine.jpg" alt="Pine" /></span>
+                                    <span id="rosewood"><img src="~/images/rosewood.jpg" alt="Rosewood" /></span>
+                                    <span asp-validation-for="Desk.Material" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.Rush" class="control-label"></label>
+                            <input asp-for="Desk.Rush" class="form-control" />
+                            <span asp-validation-for="Desk.Rush" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.Date" class="control-label"></label>
+                            <input asp-for="Desk.Date" class="form-control" />
+                            <span asp-validation-for="Desk.Date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Desk.TotalCost" class="control-label"></label>
+                            <input asp-for="Desk.TotalCost" class="form-control" />
+                            <span asp-validation-for="Desk.TotalCost" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                            <a class="btn btn-info" asp-page="./Index">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

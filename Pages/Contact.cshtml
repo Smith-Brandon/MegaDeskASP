@@ -1,0 +1,37 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<!-- Contact Us Section -->
+<section>
+    <div class="m-3">
+        <h1>Contact</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group label-floating">
+                        <label id="name" class="control-label">Name</label>
+                        <input class="form-control" type="text" name="name" aria-labelledby="name" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label id="email" class="control-label">Email</label>
+                        <input class="form-control" type="email" name="email" aria-labelledby="email" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label id="subject" class="control-label">Subject</label>
+                        <input class="form-control" type="text" name="subject" aria-labelledby="subject" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label id="message" class="control-label">Message</label>
+                        <textarea class="form-control" rows="3" name="message" aria-labelledby="message" required></textarea>
+                    </div>
+                        <button class="btn btn-primary" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

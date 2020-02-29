@@ -3,51 +3,72 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MegaDeskWebASP</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"] | MegaDesk</title>
+    <meta name="description" content="MegaDesk is a fictitious, small company that makes custom desks to order within a given parameter and constraint set." />
+    <link rel="preload" href="~/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="~/css/normalize.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="~/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="~/css/small.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="~/css/medium.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="~/css/large.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
+    <partial name="_CookieConsentPartial" />
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MegaDeskWebASP</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DeskPages/Index">My Quotes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DeskPages/Create">Add Quote</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/">
+                <img class="p-1" src="~/images/MegaDesk-Logo.png" alt="MegaDesk Logo" />MegaDesk
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-danger mr-2 mb-2" href="/MyQuotes">My Quotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-dark mb-2" href="/MyQuotes/Create">Add Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        <main>
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - MegaDeskWebASP - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+        <footer class="footer table-dark text-light p-2">
+            <div class="text-center">
+                <a class="btn btn-inline btn-link text-light" asp-area="" asp-page="/Index">Home</a>|
+                <a class="btn btn-inline btn-link text-light" asp-area="" asp-page="/About">About</a>|
+                <a class="btn btn-inline btn-link text-light" asp-area="" asp-page="/Privacy">Privacy</a>|
+                <a class="btn btn-inline btn-link text-light" asp-area="" asp-page="/Contact">Contact</a>
+                <p class="mb-0">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear())</script> - MegaDesk
+                </p>
+            </div>
+        </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/js/jquery-3.4.1.slim.min.js" defer></script>
+    <script src="~/js/popper.min.js" defer></script>
+    <script src="~/js/bootstrap.min.js" defer></script>
+    <script src="~/js/jquery.lazyload.min.js" defer></script>
+    <script src="~/js/site.js" defer></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

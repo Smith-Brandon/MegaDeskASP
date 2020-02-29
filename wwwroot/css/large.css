@@ -1,0 +1,61 @@
+﻿@media only screen and (max-width: 60em) {
+    .card {
+        border: 0;
+    }
+
+    form.form-inline button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    form.form-inline a.btn.full-list {
+        display: block;
+        width: 100%;
+    }
+        form.form-inline a.btn.create-new {
+            display: block;
+            width: 100%;
+            margin:5px 0;
+        }
+    table{
+        table-layout:fixed;
+    }
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+        table tr:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    table td {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        clear: left;
+        width: 100%;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+
+        table td:last-child {
+            border-bottom: 0;
+        }
+
+        table td:before {
+            content: attr(data-label);
+            float: left;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+}

@@ -1,0 +1,21 @@
+﻿@media only screen and (min-width: 37.5em) {
+    blockquote img {
+        float: right;
+    }
+    section {
+        max-width: 1200px;
+        margin:0 auto;
+    }
+    form.form-inline{
+        margin:10px 0;
+    }
+    .card {
+        border: 1px solid rgba(0,0,0,0.125)
+    }
+}
+@media (min-width: 576px){
+    .form-inline .form-control{
+        display:flex;
+        flex:1;
+    }
+}

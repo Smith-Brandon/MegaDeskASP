@@ -1,33 +1,31 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your Javascript code.
-
+﻿$(document).ready(function () {
+    $('a.nav-link[href="' + this.location.pathname + '"]').parent().addClass('active');
+});
 
 $(document).ready(function () {
     $('#Desk_Material').on('change', function () {
-        $('#image1,#image2, #image3, #image4, #image5').hide();
+        $('#oak, #laminate, #veneer, #pine, #rosewood').hide();
         if (this.value === 'Oak') {
-            $("#image1").show();
+            $("#oak").show();
         }
         else if (this.value === 'Laminate') {
-            $("#image2").show();
+            $("#laminate").show();
         }
         else if (this.value === 'Veneer') {
-            $("#image3").show();
+            $("#veneer").show();
         }
         else if (this.value === 'Pine') {
-            $("#image4").show();
+            $("#pine").show();
         }
         else if (this.value === 'Rosewood') {
-            $("#image5").show();
+            $("#rosewood").show();
         }
         else {
-            $("#image1").hide();
-            $("#image2").hide();
-            $("#image3").hide();
-            $("#image4").hide();
-            $("#image5").hide();
+            $("#oak").hide();
+            $("#laminate").hide();
+            $("#veneer").hide();
+            $("#pine").hide();
+            $("#rosewood").hide();
         }
     })
         .change();

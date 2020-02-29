@@ -1,0 +1,102 @@
+﻿@page
+@model MegaDeskWebASP.Pages.DeskPages.IndexModel
+
+@{
+    ViewData["Title"] = "My Quotes";
+}
+
+
+<section>
+    <div class="m-3">
+        <h4>List of Quotes</h4>
+        <form class="form-inline" asp-page="./Index" method="get">
+            <label id="customername" class="mr-2 ml-2">Customer Name:</label>
+            <select asp-for="CustName" asp-items="Model.Names"  class="form-control" aria-labelledby="customername" >
+                <option value="">All</option>
+            </select>
+            <label id="sortorder" class="mr-2 ml-2">Sort:</label>
+            <select asp-for="SortOrder" class="form-control mr-2" aria-labelledby="sortorder" >
+                <option value="Newest">Newest</option>
+                <option value="Oldest">Oldest</option>
+                <option value="Name Descending">Name Descending</option>
+                <option value="Name Ascending">Name Ascending</option>
+            </select>
+            <button type="submit" class="btn btn-info mr-2">Search</button>
+            <a asp-page="./Index" class="btn btn-primary full-list mr-2">Full List</a>
+            <a asp-page="Create" class="btn btn-danger create-new mr-2">Create New</a>
+        </form>
+        <table>
+            <thead class="btn-dark">
+                <tr>
+                    <th>
+                        <a asp-page="./Index" asp-route-sortOrder="@Model.CustName">
+                            @Html.DisplayNameFor(model => model.DeskModel[0].Name)
+                            <i class="fa fa-sort" aria-hidden="true"></i>
+                        </a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Width)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Depth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Drawers)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Material)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Rush)
+                    </th>
+                    <th>
+                        <a asp-page="./Index" asp-route-sortOrder="@Model.Date">
+                            @Html.DisplayNameFor(model => model.DeskModel[0].Date)
+                            <i class="fa fa-sort" aria-hidden="true"></i>
+                        </a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].TotalCost)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DeskModel)
+                {
+                <tr>
+                    <td data-label="CUSTOMER NAME">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td data-label="WIDTH">
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td data-label="DEPTH">
+                        @Html.DisplayFor(modelItem => item.Depth)
+                    </td>
+                    <td data-label="NUMBER OF DRAWERS">
+                        @Html.DisplayFor(modelItem => item.Drawers)
+                    </td>
+                    <td data-label="MATERIAL">
+                        @Html.DisplayFor(modelItem => item.Material)
+                    </td>
+                    <td data-label="RUSH">
+                        @Html.DisplayFor(modelItem => item.Rush)
+                    </td>
+                    <td data-label="DATE">
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td data-label="TOTAL COST">
+                        &dollar;@Html.DisplayFor(modelItem => item.TotalCost)
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-sm m-1" asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+                        <a class="btn btn-primary btn-sm m-1" asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                        <a class="btn btn-danger btn-sm m-1" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
