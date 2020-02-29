@@ -29,10 +29,7 @@
             <thead class="btn-dark">
                 <tr>
                     <th>
-                        <a asp-page="./Index" asp-route-sortOrder="@Model.CustName">
-                            @Html.DisplayNameFor(model => model.DeskModel[0].Name)
-                            <i class="fa fa-sort" aria-hidden="true"></i>
-                        </a>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Name)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.DeskModel[0].Width)
@@ -50,10 +47,7 @@
                         @Html.DisplayNameFor(model => model.DeskModel[0].Rush)
                     </th>
                     <th>
-                        <a asp-page="./Index" asp-route-sortOrder="@Model.Date">
-                            @Html.DisplayNameFor(model => model.DeskModel[0].Date)
-                            <i class="fa fa-sort" aria-hidden="true"></i>
-                        </a>
+                        @Html.DisplayNameFor(model => model.DeskModel[0].Date)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.DeskModel[0].TotalCost)
